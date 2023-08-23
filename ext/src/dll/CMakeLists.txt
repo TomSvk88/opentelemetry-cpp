@@ -10,16 +10,24 @@ target_link_libraries(
   opentelemetry_cpp PRIVATE opentelemetry_trace
                             opentelemetry_exporter_ostream_span)
 
+target_link_libraries(
+  opentelemetry_cpp PRIVATE opentelemetry_metrics
+                            opentelemetry_exporter_ostream_metrics)
+
 if(WITH_OTLP_GRPC)
   add_compile_definitions(WITH_OTLP_GRPC)
   target_link_libraries(opentelemetry_cpp
                         PRIVATE opentelemetry_exporter_otlp_grpc)
+  target_link_libraries(opentelemetry_cpp
+                        PRIVATE opentelemetry_exporter_otlp_grpc_metrics)
 endif()
 
 if(WITH_OTLP_HTTP)
   add_compile_definitions(WITH_OTLP_HTTP)
   target_link_libraries(opentelemetry_cpp
                         PRIVATE opentelemetry_exporter_otlp_http)
+  target_link_libraries(opentelemetry_cpp
+                        PRIVATE opentelemetry_exporter_otlp_http_metric)
 endif()
 
 if(WITH_LOGS_PREVIEW)

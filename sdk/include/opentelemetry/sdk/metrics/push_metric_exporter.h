@@ -21,7 +21,7 @@ struct ResourceMetrics;
  * PushMetricExporter defines the interface to be used by metrics libraries to
  *  push metrics data to the OpenTelemetry exporters.
  */
-class PushMetricExporter
+class OPENTELEMETRY_EXPORT PushMetricExporter
 {
 public:
   virtual ~PushMetricExporter() = default;

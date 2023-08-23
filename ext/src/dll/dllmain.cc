@@ -5,6 +5,7 @@
 
 // Include API header files here for exporting
 #include <opentelemetry/trace/provider.h>
+#include <opentelemetry/metrics/provider.h>
 
 #if defined(ENABLE_LOGS_PREVIEW)
 #  include <opentelemetry/logs/logger_provider.h>
